@@ -17,9 +17,14 @@ Add `model_fields_i18n` in the Gemfile:
     post = Post.create(:title => "Наслов", :title_en => "Title", :title_fr => "Titre")
     post.t(:title) # => returns field value in current I18n.locale
 
-    I18n.locale = :mk | post.t(:title) # => Наслов
-    I18n.locale = :en | post.t(:title) # => Title
-    I18n.locale = :fr | post.t(:title) # => Titre
+    I18n.locale = :mk
+    post.t(:title) # => Наслов
+
+    I18n.locale = :en
+    post.t(:title) # => Title
+
+    I18n.locale = :fr
+    post.t(:title) # => Titre
 
 ## LICENSE:
 
